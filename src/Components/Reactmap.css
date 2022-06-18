@@ -1,0 +1,23 @@
+/* 
+.react-bingmaps{
+    position:absolute;
+    height:70vh;
+    width:60vw;
+    left:30%;
+} */
+.direction-container{
+	/* max-height: 460px; */
+	overflow: auto;
+}
+.mapcomponent {
+    
+}
+.customClass{
+	height: 100%;
+    margin-left: 10px;
+    
+}
+div#eleven {
+    width: 70%;
+    float: right;
+}

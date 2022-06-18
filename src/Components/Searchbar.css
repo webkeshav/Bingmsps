@@ -1,0 +1,11 @@
+.searchInput{
+    display : flex;
+    border-radius: 15px;
+}
+
+.serach input{
+    background-color: white;
+    border: 0ch;
+    
+    align-items: center;
+}
