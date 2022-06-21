@@ -120,3 +120,4 @@ console.log(buildingPolygon);
 }
 
 export default Reactmap;
+ 
