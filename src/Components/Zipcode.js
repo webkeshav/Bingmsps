@@ -1,27 +1,43 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
 
+function Zipcode({ uniquePostal }) {
+  const [zipvalue, setZipvalue] = useState(null);
 
-function Zipcode() {
+  const handleZipCodeValue = () => {
+
+  };
   return (
-   
-      
-     <div className="dropdown my-3">
-  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-    Zip Codes
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a className="dropdown-item active" href="#">Action</a></li>
-    <li><a className="dropdown-item" href="#">Another action</a></li>
-    <li><a className="dropdown-item" href="#">Something else here</a></li>
-    <li><hr className="dropdown-divider" /></li>
-    <li><a className="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
-    
-      
-      
-  
-  )
+    <div className="dropdown my-3">
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton2"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Zip Codes
+      </button>
+      <ul
+        className="dropdown-menu dropdown-menu-dark"
+        aria-labelledby="dropdownMenuButton2"
+      >
+        {uniquePostal.map((element) => {
+          return (
+            <li key={element}>
+              <a
+                className="dropdown-item"
+                onClick={handleZipCodeValue}
+                href="#"
+              >
+                {element}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
-export default Zipcode
+export default Zipcode;
