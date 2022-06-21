@@ -25,13 +25,40 @@ function Reactmap() {
     },
   ];
 
-  let gisdata = buildingdata.map((element) => {
-    return console.log(element.Gis[0].lat);
+  let Zipcodes = buildingdata.map((element) => {
+    return element.PostalCode
+  
   });
 
-  // gisdata.map((e)=>{
-  //   return console.log(e);
-  // })
+ const uniquePostal = Zipcodes.filter((currentValue, index, arr)=>{
+ return arr.indexOf(currentValue) === index && currentValue !=null
+  })
+
+  console.log(uniquePostal);
+
+
+  //GIS
+ let Gisarr =[];
+  let GIScord = buildingdata.map((element) => {
+    return element.Gis;
+  });
+
+for(let i=0; i<GIScord.length;i++){
+  Gisarr.push(JSON.parse(GIScord[i]))
+}
+// let unique =JSON.parse(GIScord[0]);
+
+//  console.log(Gisarr)
+
+
+var buildingPolygon = Gisarr.map((x)=>{
+ return {locations:x,option:{fillColor: "rgba(0,0,93,0.4)", strokeThickness: 2} };
+
+});
+console.log(buildingPolygon);
+
+
+
 
   // const mapPolygons  =
   // [
@@ -73,21 +100,21 @@ function Reactmap() {
     ],
   };
   return (
-    <div className="container mapcomponent my-4" style={{ height: "70vh" }}>
+    <div className="container mapcomponent my-4" style={{ height: "80vh", width:"100%" }}>
       <ReactBingmaps
         className="customClass"
         id="eleven"
         bingmapKey="An24S5X_oclrRB46CkU2HltZ2gul-nA60rP6TTWx0pHEUULfmc2depPcG-YrF9wO"
         center={[54.900554332994474, 9.1272366900173036]}
-        zoom={15}
+        zoom={16}
         // infoboxesWithPushPins = {infoboxesWithPushPins}
         //  directions = {directions}
-        // mapPolygons={mapPolygons}
+         mapPolygons={buildingPolygon}
       ></ReactBingmaps>
-      <div className="direction-container" style={{ height: "70vh" }}>
+      {/* <div className="direction-container" style={{ height: "70vh" }}>
         <div className="input-panel" id="inputPanel"></div>
         <div className="itinerary-container" id="itineraryContainer"></div>
-      </div>
+      </div> */}
     </div>
   );
 }

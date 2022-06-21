@@ -4,7 +4,7 @@ import Data from "./data.json"
 // import Card from './Components/Card';
 import Navbar from './Components/Navbar';
 import Reactmap from './Components/Reactmap';
-import Searchbar from './Components/Searchbar';
+import Zipcode from './Components/Zipcode';
 
 function App() {
  
@@ -12,7 +12,7 @@ function App() {
     <>
    
       <Navbar />
-      <Searchbar placeholder="Enter the address" data={Data}/>
+      <Zipcode/>
       <Reactmap />
       {/* <Card /> */}
       </>

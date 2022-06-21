@@ -420,9 +420,10 @@ class ReactBingmaps extends Component {
 		    for(let regularPolygonIndex = 0; regularPolygonIndex < regularPolygons.length; regularPolygonIndex++){
 		    	if(regularPolygons[regularPolygonIndex].locations)
 		    	{
-					let locations = regularPolygons[regularPolygonIndex].locations.map(function(l){ return new Microsoft.Maps.Location(l.lat,l.lng); })
+					let locations = regularPolygons[regularPolygonIndex].locations.map(function(l){ return new Microsoft.Maps.Location(l.lat,l.lng); });
+					let option = regularPolygons[regularPolygonIndex].option ? regularPolygons[regularPolygonIndex].option : {};
 
-                    var polygon = new Microsoft.Maps.Polygon(locations, null);
+                    var polygon = new Microsoft.Maps.Polygon(locations, option);
 					map[mapReference].entities.push(polygon);
 					
 				}
