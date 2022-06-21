@@ -46,9 +46,7 @@ function Reactmap() {
 for(let i=0; i<GIScord.length;i++){
   Gisarr.push(JSON.parse(GIScord[i]))
 }
-// let unique =JSON.parse(GIScord[0]);
 
-//  console.log(Gisarr)
 
 
 var buildingPolygon = Gisarr.map((x)=>{
